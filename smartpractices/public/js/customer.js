@@ -11,6 +11,7 @@ frappe.ui.form.on('Customer', {
                       freeze: true,
                       freeze_message: __("Creating Jobs Data..."),
                       callback: function(r) {
+                        //frappe.ui.toolbar.clear_cache();
                         frappe.show_alert({
                           message: __("Jobs created"),
                           indicator: "green"

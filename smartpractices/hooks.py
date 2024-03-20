@@ -66,14 +66,15 @@ doctype_js = {"Customer": "public/js/customer.js"}
 
 after_migrate = [
     "smartpractices.utils.after_migrate.import_job_groups",
-    "smartpractices.utils.after_migrate.give_read_access"
+    "smartpractices.utils.after_migrate.give_read_access",
+    "smartpractices.utils.install.after_install"
     ]
 
 # Installation
 # ------------
 
 # before_install = "smartpractices.install.before_install"
-# after_install = "smartpractices.install.after_install"
+after_install = "smartpractices.utils.install.after_install"
 
 # Uninstallation
 # ------------

@@ -20,3 +20,5 @@ def create_jobs(customer):
 		"Smr Job Non Groups",
 		filters={"customer": customer}
 	)
+
+	return job_groups

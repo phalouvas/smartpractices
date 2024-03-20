@@ -8,7 +8,10 @@
  "field_order": [
   "customer",
   "job_group",
-  "naming_series"
+  "naming_series",
+  "column_break_gptd",
+  "account_manager",
+  "disabled"
  ],
  "fields": [
   {
@@ -37,11 +40,27 @@
    "label": "Naming Series",
    "no_copy": 1,
    "options": "SMR-JOB-"
+  },
+  {
+   "fieldname": "account_manager",
+   "fieldtype": "Link",
+   "label": "Account Manager",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_gptd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-20 08:12:39.647060",
+ "modified": "2024-03-20 08:21:02.945343",
  "modified_by": "Administrator",
  "module": "Smart Practices",
  "name": "Smr Job",

@@ -64,7 +64,10 @@ doctype_js = {"Customer": "public/js/customer.js"}
 # 	"filters": "smartpractices.utils.jinja_filters"
 # }
 
-after_migrate = ["smartpractices.utils.after_migrate.import_job_groups"]
+after_migrate = [
+    "smartpractices.utils.after_migrate.import_job_groups",
+    "smartpractices.utils.after_migrate.give_read_access"
+    ]
 
 # Installation
 # ------------

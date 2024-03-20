@@ -10,7 +10,7 @@ class SmrJob(Document):
 
 @frappe.whitelist()
 def create_jobs(customer):
-	job_groups = frappe.get_all("Smr Job Group", filters={"is_group": 0})
+	customer_doc = frappe.get_doc("Customer", customer)
 	existing_jobs = frappe.get_all("Smr Job", filters={"customer": customer, "disabled": 0})
 	for job in existing_jobs:
 		job_doc = frappe.get_doc("Smr Job", job.name)
@@ -18,4 +18,11 @@ def create_jobs(customer):
 		job_doc.save()
 		job_doc.delete()
 
-	return job_groups
+	job_groups = frappe.get_all("Smr Job Group", filters={"is_group": 0})
+	for job_group in job_groups:
+		job_doc = frappe.new_doc("Smr Job")
+		job_doc.customer = customer
+		job_doc.job_group = job_group.name
+		if customer_doc.account_manager:
+			job_doc.account_manager = customer_doc.account_manager
+		job_doc.insert()

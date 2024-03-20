@@ -1,12 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "naming_series:",
  "creation": "2024-03-20 08:06:08.656254",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "customer",
-  "job_group"
+  "job_group",
+  "naming_series"
  ],
  "fields": [
   {
@@ -26,14 +28,24 @@
    "label": "Job Group",
    "options": "Smr Job Group",
    "reqd": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming Series",
+   "no_copy": 1,
+   "options": "SMR-JOB-"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-03-20 08:08:12.393963",
+ "modified": "2024-03-20 08:12:39.647060",
  "modified_by": "Administrator",
  "module": "Smart Practices",
  "name": "Smr Job",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

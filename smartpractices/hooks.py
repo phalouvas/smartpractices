@@ -122,13 +122,13 @@ app_license = "gpl-3.0"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	"*": {
+		"on_update": "smartpractices.smart_practices.hooks.assignment_rule.apply",
+		"on_cancel": "smartpractices.smart_practices.hooks.assignment_rule.apply",
+		"on_update_after_submit": "smartpractices.smart_practices.hooks.assignment_rule.apply"
+	}
+}
 
 # Scheduled Tasks
 # ---------------

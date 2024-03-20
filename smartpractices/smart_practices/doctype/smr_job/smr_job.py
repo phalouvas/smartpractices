@@ -20,4 +20,3 @@ def create_jobs(customer):
 		"Smr Job Non Groups",
 		filters={"customer": customer}
 	)
-	pass

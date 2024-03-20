@@ -1,8 +1,11 @@
-// Copyright (c) 2024, KAINOTOMO PH LTD and contributors
-// For license information, please see license.txt
-
-// frappe.ui.form.on("Smr Job", {
-// 	refresh(frm) {
-
-// 	},
-// });
+frappe.ui.form.on('Smr Job', {
+    onload: function(frm) {
+        frm.set_query('job_group', function() {
+            return {
+                filters: {
+                    'is_group': 0
+                }
+            };
+        });
+    }
+});

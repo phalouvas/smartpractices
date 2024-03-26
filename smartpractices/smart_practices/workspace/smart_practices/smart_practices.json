@@ -13,8 +13,8 @@
  "is_hidden": 0,
  "label": "Smart Practices",
  "links": [],
- "modified": "2024-03-20 09:36:59.508636",
- "modified_by": "Administrator",
+ "modified": "2024-03-26 09:35:20.216773",
+ "modified_by": "info@kainotomo.com",
  "module": "Smart Practices",
  "name": "Smart Practices",
  "number_cards": [],
@@ -27,7 +27,7 @@
  "shortcuts": [
   {
    "color": "Grey",
-   "doc_view": "List",
+   "doc_view": "Tree",
    "format": "{} Open",
    "label": "Job Groups",
    "link_to": "Smr Job Group",

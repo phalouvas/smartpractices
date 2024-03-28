@@ -1,0 +1,38 @@
+Default Unit of Measure,Item Code,Item Group,Item Name,Allow Purchase,Grant Commission,Maintain Stock
+Nos,Montly Accounting,Accounting,Montly Accounting,0,0,0
+Nos,Other / Retainer,Accounting,Other / Retainer,0,0,0
+Nos,Payroll,Accounting,Payroll,0,0,0
+Nos,Quarterly Accounting,Accounting,Quarterly Accounting,0,0,0
+Nos,Registration to Social insurances,Accounting,Registration to Social insurances,0,0,0
+Nos,Registration to VAT,Accounting,Registration to VAT,0,0,0
+Nos,Social insurances aplications to paid on real income - Self employment,Accounting,Social insurances aplications to paid on real income - Self employment,0,0,0
+Nos,Social insurances Monthly,Accounting,Social insurances Monthly,0,0,0
+Nos,Social InsurancesQuarterly - Self employment,Accounting,Social InsurancesQuarterly - Self employment,0,0,0
+Nos,VAT preparation,Accounting,VAT preparation,0,0,0
+Nos,VAT refund,Accounting,VAT refund,0,0,0
+Nos,VIES,Accounting,VIES,0,0,0
+Nos,Audit of Financial statements,Audit and assurances,Audit of Financial statements,0,0,0
+Nos,AML / KYC,Corporate,AML / KYC,0,0,0
+Nos,Bank account opening,Corporate,Bank account opening,0,0,0
+Nos,Company Incorporation,Corporate,Company Incorporation,0,0,0
+Nos,Corporate HE32 Preparation & Submission (along with the audited FS),Corporate,Corporate HE32 Preparation & Submission (along with the audited FS),0,0,0
+Nos,Documentation Admin,Corporate,Documentation Admin,0,0,0
+Nos,Municipality objection,Corporate,Municipality objection,0,0,0
+Nos,Nominee Director,Corporate,Nominee Director,0,0,0
+Nos,Nominee Secretary,Corporate,Nominee Secretary,0,0,0
+Nos,Nominee Shareholder,Corporate,Nominee Shareholder,0,0,0
+Nos,Registered Office Address,Corporate,Registered Office Address,0,0,0
+Nos,UBO Register,Corporate,UBO Register,0,0,0
+Nos,DAC 6,Taxation,DAC 6,0,0,0
+Nos,Employer's return,Taxation,Employer's return,0,0,0
+Nos,IR1,Taxation,IR1,0,0,0
+Nos,IR614 IR603/623,Taxation,IR614 IR603/623,0,0,0
+Nos,Provisional Tax (if taxable profits for the year),Taxation,Provisional Tax (if taxable profits for the year),0,0,0
+Nos,Rent Income Declaration Dividends declaration Income tax return-Individual Company Registration to Tax & VAT,Taxation,Rent Income Declaration Dividends declaration Income tax return-Individual Company Registration to Tax & VAT,0,0,0
+Nos,Restructuring,Taxation,Restructuring,0,0,0
+Nos,Tac consulting,Taxation,Tac consulting,0,0,0
+Nos,Tax Certificates,Taxation,Tax Certificates,0,0,0
+Nos,Tax residency,Taxation,Tax residency,0,0,0
+Nos,TD6,Taxation,TD6,0,0,0
+Nos,TD7,Taxation,TD7,0,0,0
+Nos,Transfer Pricing,Taxation,Transfer Pricing,0,0,0

@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"vOQppyevpV\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Smart Practices</span>\",\"col\":12}},{\"id\":\"H_JzQDYrg-\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Job Groups\",\"col\":3}},{\"id\":\"ZKq9-NqTA0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Jobs\",\"col\":3}}]",
+ "content": "[{\"id\":\"vOQppyevpV\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Smart Practices</span>\",\"col\":12}}]",
  "creation": "2024-03-20 08:01:24.874581",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "is_hidden": 0,
  "label": "Smart Practices",
  "links": [],
- "modified": "2024-03-28 07:59:49.759517",
+ "modified": "2024-03-28 08:35:57.260634",
  "modified_by": "info@kainotomo.com",
  "module": "Smart Practices",
  "name": "Smart Practices",
@@ -24,24 +24,6 @@
  "quick_lists": [],
  "roles": [],
  "sequence_id": 2.0,
- "shortcuts": [
-  {
-   "color": "Grey",
-   "doc_view": "Tree",
-   "format": "{} Open",
-   "label": "Job Groups",
-   "link_to": "Smr Job Group",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Jobs",
-   "link_to": "Smr Job",
-   "stats_filter": "[]",
-   "type": "DocType"
-  }
- ],
+ "shortcuts": [],
  "title": "Smart Practices"
 }

@@ -25,3 +25,9 @@ def import_item_groups():
 
     file_path = os.path.join(file_dir, 'Item.csv')
     import_file("Item", file_path, "Insert", False, True)
+
+    file_path = os.path.join(file_dir, 'Task Type.csv')
+    import_file("Task Type", file_path, "Insert", False, True)
+
+    file_path = os.path.join(file_dir, 'Task.csv')
+    import_file("Task", file_path, "Insert", False, True)

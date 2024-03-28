@@ -1,0 +1,38 @@
+Subject,Begin On (Days),Color,Duration (Days),Is Group,Is Milestone,Is Template,Priority,Status,Task Description,Type
+Montly Accounting,0,#449CF0,0,0,0,1,Low,Template,,Accounting
+Other / Retainer,0,#449CF0,0,0,0,1,Low,Template,,Accounting
+Payroll,0,#449CF0,0,0,0,1,Low,Template,,Accounting
+Quarterly Accounting,0,#449CF0,0,0,0,1,Low,Template,,Accounting
+Registration to Social insurances,0,#449CF0,0,0,0,1,Low,Template,,Accounting
+Registration to VAT,0,#449CF0,0,0,0,1,Low,Template,,Accounting
+Social insurances aplications to paid on real income - Self employment,0,#449CF0,0,0,0,1,Low,Template,,Accounting
+Social insurances Monthly,0,#449CF0,0,0,0,1,Low,Template,,Accounting
+Social InsurancesQuarterly - Self employment,0,#449CF0,0,0,0,1,Low,Template,,Accounting
+VAT preparation,0,#449CF0,0,0,0,1,Low,Template,,Accounting
+VAT refund,0,#449CF0,0,0,0,1,Low,Template,,Accounting
+VIES,0,#449CF0,0,0,0,1,Low,Template,,Accounting
+Audit of Financial statements,0,#449CF0,0,0,0,1,Low,Template,,Audit and assurances
+AML / KYC,0,#449CF0,0,0,0,1,Low,Template,,Corporate
+Bank account opening,0,#449CF0,0,0,0,1,Low,Template,,Corporate
+Company Incorporation,0,#449CF0,0,0,0,1,Low,Template,,Corporate
+Corporate HE32 Preparation & Submission (along with the audited FS),0,#449CF0,0,0,0,1,Low,Template,,Corporate
+Documentation Admin,0,#449CF0,0,0,0,1,Low,Template,,Corporate
+Municipality objection,0,#449CF0,0,0,0,1,Low,Template,,Corporate
+Nominee Director,0,#449CF0,0,0,0,1,Low,Template,,Corporate
+Nominee Secretary,0,#449CF0,0,0,0,1,Low,Template,,Corporate
+Nominee Shareholder,0,#449CF0,0,0,0,1,Low,Template,,Corporate
+Registered Office Address,0,#449CF0,0,0,0,1,Low,Template,,Corporate
+UBO Register,0,#449CF0,0,0,0,1,Low,Template,,Corporate
+DAC 6,0,#449CF0,0,0,0,1,Low,Template,,Taxation
+Employer's return,0,#449CF0,0,0,0,1,Low,Template,,Taxation
+IR1,0,#449CF0,0,0,0,1,Low,Template,,Taxation
+IR614 IR603/623,0,#449CF0,0,0,0,1,Low,Template,,Taxation
+Provisional Tax (if taxable profits for the year),0,#449CF0,0,0,0,1,Low,Template,,Taxation
+Rent Income Declaration Dividends declaration Income tax return-Individual Company Registration to Tax & VAT,0,#449CF0,0,0,0,1,Low,Template,,Taxation
+Restructuring,0,#449CF0,0,0,0,1,Low,Template,,Taxation
+Tac consulting,0,#449CF0,0,0,0,1,Low,Template,,Taxation
+Tax Certificates,0,#449CF0,0,0,0,1,Low,Template,,Taxation
+Tax residency,0,#449CF0,0,0,0,1,Low,Template,,Taxation
+TD6,0,#449CF0,0,0,0,1,Low,Template,,Taxation
+TD7,0,#449CF0,0,0,0,1,Low,Template,,Taxation
+Transfer Pricing,0,#449CF0,0,0,0,1,Low,Template,,Taxation

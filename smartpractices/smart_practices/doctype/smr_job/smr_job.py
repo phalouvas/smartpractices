@@ -26,3 +26,14 @@ def create_jobs(customer):
 		if customer_doc.account_manager:
 			job_doc.account_manager = customer_doc.account_manager
 		job_doc.insert()
+
+@frappe.whitelist()
+def get_items():
+	return frappe.db.sql("""
+		SELECT name FROM `tabItem`
+		WHERE item_group IN (
+			SELECT name FROM `tabItem Group`
+			WHERE lft >= (SELECT lft FROM `tabItem Group` WHERE name = 'Smart Practices')
+			AND rgt <= (SELECT rgt FROM `tabItem Group` WHERE name = 'Smart Practices')
+		)
+	""", as_dict=1)

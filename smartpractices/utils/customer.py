@@ -15,7 +15,8 @@ def create_quotation(customer):
 
     items = get_items()
     quotation = frappe.new_doc("Quotation")
-    quotation.customer = customer
+    quotation.quotation_to = "Customer"
+    quotation.party_name = customer
     quotation.items = []
     for item in items:
         quotation.append("items", {

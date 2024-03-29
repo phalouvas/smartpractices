@@ -1,4 +1,5 @@
 import frappe
+from frappe.permissions import add_permission
 
 def after_install():
     add_standard_navbar_items()
@@ -37,3 +38,9 @@ def add_standard_navbar_items():
 		)
 
 	navbar_settings.save()
+
+
+def fix_permissions():
+	# Set permissions for Role "Project Manager" to access "Project Template"
+	add_permission("Role", "Project Manager", "Project Template")
+	

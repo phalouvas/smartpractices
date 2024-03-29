@@ -31,3 +31,6 @@ def import_item_groups():
 
     file_path = os.path.join(file_dir, 'Task.csv')
     import_file("Task", file_path, "Insert", False, True)
+
+    file_path = os.path.join(file_dir, 'Module Profile.csv')
+    import_file("Module Profile", file_path, "Insert", False, True)

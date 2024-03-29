@@ -43,7 +43,6 @@ def import_app_data():
 	file_path = os.path.join(file_dir, 'Role Profile.csv')
 	import_file("Role Profile", file_path, "Insert", False, True)
      
-@frappe.whitelist()
 def create_project_template():
     if frappe.db.exists("Project Template", "Smart Practices"):
         return

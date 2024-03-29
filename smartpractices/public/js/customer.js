@@ -4,7 +4,7 @@ frappe.ui.form.on('Customer', {
             frm.add_custom_button(__('Create Jobs'), function () {
                 frappe.confirm(__("Are you sure you want to proceed?"), () => {
                     frappe.call({
-                      method: "smartpractices.smart_practices.doctype.smr_job.smr_job.create_jobs",
+                      method: "smartpractices.utils.after_migrate.create_project_template",
                       args: {
 						customer: frm.doc.name,
 					},

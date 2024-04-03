@@ -28,8 +28,7 @@ def export_sis(payroll_entry):
 
     # Schedule Details
     line = "02"
-    # get company custom_sis_number
-    custom_sis_number = frappe.get_value("Company", payroll_entry_doc.company, "custom_sis_number")
+    custom_sis_number = payroll_entry_doc.custom_sis_number
     if custom_sis_number:
         # Verify that the custom_sis_number is 15 characters long and in format 99999999/9/9999
         if len(custom_sis_number) != 15:
@@ -38,14 +37,20 @@ def export_sis(payroll_entry):
             frappe.throw(_("The Social Insurance Number in the Company master must be in the format 99999999/9/9999"))
         line += custom_sis_number + " " * (15 - len(custom_sis_number))
     else:
-        frappe.throw(_("Please set the Social Insurance Number in the Company master"))
+        frappe.throw(_("Please set the Social Insurance Number"))
 
     # get company custom_employers_type
-    custom_employers_type = frappe.get_value("Company", payroll_entry_doc.company, "custom_employers_type")
-    if custom_employers_type:
-        line += custom_employers_type
+    custom_employees_category = payroll_entry_doc.custom_employees_category
+    if custom_employees_category:
+        line += custom_employees_category
     else:
-        frappe.throw(_("Please set the Employer Type in the Company master"))
+        frappe.throw(_("Please set the Employees Category"))
+
+    custom_earnings_type = payroll_entry_doc.custom_earnings_type
+    if custom_earnings_type:
+        line += custom_earnings_type
+    else:
+        frappe.throw(_("Please set the Earnings Type"))
 
     # Delete existing file with the same name
     existing_file = frappe.get_value('File', {'file_name': file_name})

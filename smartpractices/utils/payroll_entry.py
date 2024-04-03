@@ -9,6 +9,8 @@ def export_sis(payroll_entry):
     if not payroll_entry_doc.docstatus == 1:
         frappe.throw(_("Only submitted documents can be exported"))
 
+    lines = ""
+
     # Header record
     line = "01"
     line += payroll_entry_doc.name + " " * (25 - len(payroll_entry_doc.name))
@@ -21,10 +23,7 @@ def export_sis(payroll_entry):
     else:
         line += " " * 20
 
-    # Write the line to a text file
-    file_name = f'{payroll_entry_doc.name}.txt'
-    with io.open(file_name, 'w', encoding='utf-8') as f:
-        f.write(line + '\n')
+    lines += line + '\n'
 
     # Schedule Details
     line = "02"
@@ -51,6 +50,18 @@ def export_sis(payroll_entry):
         line += custom_earnings_type
     else:
         frappe.throw(_("Please set the Earnings Type"))
+
+    start_date = payroll_entry_doc.start_date.strftime("%m/%Y")
+
+    line += start_date
+    line += " " * 14
+
+    lines += line + '\n'
+
+    # Write the line to a text file
+    file_name = f'{payroll_entry_doc.name}.txt'
+    with io.open(file_name, 'w', encoding='utf-8') as f:
+        f.write(lines)
 
     # Delete existing file with the same name
     existing_file = frappe.get_value('File', {'file_name': file_name})

@@ -4,6 +4,10 @@ import os
 from frappe.permissions import add_permission, update_permission_property
 
 def import_item_groups():
+	file_dir = os.path.dirname(os.path.abspath(__file__))
+	file_path = os.path.join(file_dir, 'Salary Component.csv')
+	import_file("Salary Component", file_path, "Insert", False, True)
+	import_social_insurance()
 	# Check if Item Group "Smart Practices" exists. If exists return else create it
 	if frappe.db.exists("Item Group", "Smart Practices"):
 		return
@@ -76,10 +80,37 @@ def import_social_insurance():
 	# If account does not exist, return
 	if not salary_account:
 		return
+	
+	# Get salary component with component_name "Basic"
+	salary_component = frappe.get_doc("Salary Component", "Basic")
+	salary_component.is_tax_applicable = 0
+	salary_component.depends_on_payment_days = 0
+	salary_component.amount_based_on_formula = 1
+	salary_component.formula = "base * 1"
+	salary_component.save(ignore_permissions=True)
 
 	# Loop through all existing salary components and update the account to "Salary"
-	salary_components = frappe.get_all("Salary Component", filters={"account": ""}, fields=["name"])
+	salary_components = frappe.get_all("Salary Component", filters={"account": ""}, fields=["name","amount_based_on_formula","formula"])
 	for salary_component in salary_components:
 		salary_component_doc = frappe.get_doc("Salary Component", salary_component.name)
 		salary_component_doc.append("accounts", {"account": salary_account.name})
 		salary_component_doc.save(ignore_permissions=True)
+
+	frappe.db.commit()
+
+	# Create a new salary structure "Smart Practices" and add all salary components to it
+	salary_structure = frappe.get_doc({
+		"doctype": "Salary Structure",
+		"name": "Smart Practices",
+		"is_active": "Yes",
+	})
+	for salary_component in salary_components:
+		salary_structure.append("earnings", {
+			"salary_component": salary_component.name,
+			"amount_based_on_formula": salary_component.amount_based_on_formula,
+			"formula": salary_component.formula,
+			})
+	
+	salary_structure.insert(ignore_permissions=True)
+	salary_structure.submit()
+	

@@ -26,6 +26,11 @@ def export_sis(payroll_entry):
     with io.open(file_name, 'w', encoding='utf-8') as f:
         f.write(header)
 
+    # Delete existing file with the same name
+    existing_file = frappe.get_value('File', {'file_name': file_name})
+    if existing_file:
+        frappe.delete_doc('File', existing_file)
+
     # Attach the file to the Payroll Entry
     with io.open(file_name, 'r', encoding='utf-8') as f:
         file_data = f.read()

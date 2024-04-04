@@ -13,6 +13,10 @@ def export_sis(payroll_entry):
 
     lines += get_header_record(payroll_entry_doc)
     lines += get_schedule_details(payroll_entry_doc)
+    # get all submitted Salary Slip of the Payroll Entry
+    salary_slips = frappe.get_all('Salary Slip', filters={'payroll_entry': payroll_entry, 'docstatus': 1}, fields=['name', 'employee', 'rounded_total'])
+    for salary_slip in salary_slips:
+        lines += get_employees_earnings(salary_slip)
 
     # Write the line to a text file
     file_name = f'{payroll_entry_doc.name}.txt'
@@ -37,7 +41,7 @@ def export_sis(payroll_entry):
     })
     file_doc.insert()
 
-    return file_doc.name
+    return "Social Insurance file created succesfully!"
 
 def get_header_record(payroll_entry_doc):
     """
@@ -107,4 +111,42 @@ def get_schedule_details(payroll_entry_doc):
     line += " " * 14
 
     line += '\n'
+    return line
+
+def get_employees_earnings(salary_slip):    
+    employee = frappe.get_doc('Employee', salary_slip.employee)
+    
+    # Input Code
+    line = "04"
+    
+    # Social Insurance Number
+    if employee.custom_sis_no:
+        line += "0" * (8 - len(employee.custom_sis_no)) + employee.custom_sis_no
+    else:
+        line += "0" * 8
+
+    # Identity Card Number
+    if employee.custom_identity_card_no:
+        line += "0" * (8 - len(employee.custom_identity_card_no)) + employee.custom_identity_card_no
+    else:
+        line += "0" * 8
+
+    # Aliens Registration Number
+    if employee.custom_aliens_registration_no:
+        line += "0" * (8 - len(employee.custom_aliens_registration_no)) + employee.custom_aliens_registration_no
+    else:
+        line += "0" * 8
+
+    # Actual Earnings
+    line += 'S' + str(int(salary_slip.rounded_total)).replace('.', '').rjust(10, '0')
+
+    # General Health System Earnings
+    line += 'S' + str(int(salary_slip.rounded_total)).replace('.', '').rjust(10, '0')
+
+    # Insurable Earnings
+    line += 'S' + "0" * 10
+
+    line += "0" * 15
+    line += '1\n'
+
     return line

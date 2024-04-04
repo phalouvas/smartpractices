@@ -1,6 +1,6 @@
 "Abbr","Name","Type","Amount","Amount based on formula","Condition","Create Separate Payment Entry Against Benefit Claim","Deduct Full Tax on Selected Payroll Date","Depends on Payment Days","Description","Disabled","Do Not Include in Total","Exempted from Income Tax","Formula","Is Flexible Benefit","Is Income Tax Component","Is Tax Applicable","Max Benefit Amount (Yearly)","Only Tax Impact (Cannot Claim But Part of Taxable Income)","Pay Against Benefit Claim","Remove if Zero Valued","Round to the Nearest Integer","Statistical Component","Variable Based On Taxable Salary"
-"HRD","HRD fund","Earning",0.0,1,"",0,0,0,"HRD fund Employer's' contribution",0,0,0,"base * 0.005",0,0,0,0.0,0,0,1,0,0,0
-"R","Redundancy fund","Earning",0.0,1,"",0,0,0,"Redundancy fund Employers' contribution",0,0,0,"base * 0.012",0,0,0,0.0,0,0,1,0,0,0
-"GESY","GESY","Earning",0.0,1,"",0,0,0,"GESY fund Employee's Contribution",0,0,0,"base * 0.0555",0,0,0,0.0,0,0,1,0,0,0
-"SC","Social Cohesion fund","Earning",0.0,1,"",0,0,0,"Social Cohesion fund Employee's Contribution",0,0,0,"base * 0.02",0,0,0,0.0,0,0,1,0,0,0
-"SI","Social Insurance","Earning",0.0,1,"",0,0,0,"Social Insurance Employers' Contribution",0,0,0,"base * 0.176",0,0,0,0.0,0,0,1,0,0,0
+"SI","Social Insurance","Earning",0.0,1,"",0,0,0,"Social Insurance Employers' Contribution",0,1,0,"base * 0.176",0,0,0,0.0,0,0,1,0,0,0
+"SC","Social Cohesion fund","Earning",0.0,1,"",0,0,0,"Social Cohesion fund Employee's Contribution",0,1,0,"base * 0.02",0,0,0,0.0,0,0,1,0,0,0
+"GESY","GESY","Earning",0.0,1,"",0,0,0,"GESY fund Employee's Contribution",0,1,0,"base * 0.0555",0,0,0,0.0,0,0,1,0,0,0
+"R","Redundancy fund","Earning",0.0,1,"",0,0,0,"Redundancy fund Employers' contribution",0,1,0,"base * 0.012",0,0,0,0.0,0,0,1,0,0,0
+"HRD","HRD fund","Earning",0.0,1,"",0,0,0,"HRD fund Employer's' contribution",0,1,0,"base * 0.005",0,0,0,0.0,0,0,1,0,0,0

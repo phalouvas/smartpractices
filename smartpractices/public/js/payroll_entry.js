@@ -13,6 +13,7 @@ frappe.ui.form.on('Payroll Entry', {
                         if (r.message) {
                             frappe.msgprint(r.message);
                         }
+                        frm.reload_doc();
                     }
                 });
             });

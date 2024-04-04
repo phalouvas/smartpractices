@@ -17,6 +17,7 @@ def export_sis(payroll_entry):
     salary_slips = frappe.get_all('Salary Slip', filters={'payroll_entry': payroll_entry, 'docstatus': 1}, fields=['name', 'employee', 'rounded_total'])
     for salary_slip in salary_slips:
         lines += get_employees_earnings(salary_slip)
+    lines += get_schedule_totals(payroll_entry_doc)
 
     # Write the line to a text file
     file_name = f'{payroll_entry_doc.name}.txt'
@@ -144,9 +145,49 @@ def get_employees_earnings(salary_slip):
     line += 'S' + str(int(salary_slip.rounded_total)).replace('.', '').rjust(10, '0')
 
     # Insurable Earnings
-    line += 'S' + "0" * 10
+    line += 'S' + str(int(salary_slip.rounded_total)).replace('.', '').rjust(10, '0')
+
+    # Contributions to the Central Holiday Fund 
+    line += 'S' + "0" * 12
 
     line += "0" * 15
     line += '1\n'
+
+    return line
+
+def get_schedule_totals(payroll_entry_doc):
+    """
+    Get the schedule totals for a payroll entry.
+
+    Args:
+        payroll_entry_doc (object): The payroll entry document.
+
+    Returns:
+        str: The schedule totals line.
+    """
+    line = "05"
+    salary_slips = frappe.get_all('Salary Slip', filters={'payroll_entry': payroll_entry_doc.name, 'docstatus': 1}, fields=['rounded_total'])
+    total_rounded_total = sum([float(salary_slip['rounded_total']) for salary_slip in salary_slips])
+    
+    # Actual Earnings Total 
+    line += 'S' + str(int(total_rounded_total)).replace('.', '').rjust(12, '0')
+
+    # General Health System Earnings Total
+    line += 'S' + str(int(total_rounded_total)).replace('.', '').rjust(12, '0')
+
+    # Insurable Earnings Total
+    line += 'S' + str(int(total_rounded_total)).replace('.', '').rjust(12, '0')
+
+    # Contributions to the Central Holiday Fund
+    line += 'S' + "0" * 14
+
+    # Number of New Employees
+    line += "0" * 5
+
+    # Number of Employees whose employment has been terminated
+    line += "0" * 5
+
+    # Total number of Employees
+    line += str(len(salary_slips)).rjust(6, '0')
 
     return line

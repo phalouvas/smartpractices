@@ -11,7 +11,44 @@ def export_sis(payroll_entry):
 
     lines = ""
 
-    # Header record
+    lines += get_header_record(payroll_entry_doc)
+    lines += get_schedule_details(payroll_entry_doc)
+
+    # Write the line to a text file
+    file_name = f'{payroll_entry_doc.name}.txt'
+    with io.open(file_name, 'w', encoding='utf-8') as f:
+        f.write(lines)
+
+    # Delete existing file with the same name
+    existing_file = frappe.get_value('File', {'file_name': file_name})
+    if existing_file:
+        frappe.delete_doc('File', existing_file)
+
+    # Attach the file to the Payroll Entry
+    with io.open(file_name, 'r', encoding='utf-8') as f:
+        file_data = f.read()
+    file_doc = frappe.get_doc({
+        'doctype': 'File',
+        'file_name': file_name,
+        'attached_to_doctype': 'Payroll Entry',
+        'attached_to_name': payroll_entry,
+        'content': file_data,
+        'is_private': 1
+    })
+    file_doc.insert()
+
+    return file_doc.name
+
+def get_header_record(payroll_entry_doc):
+    """
+    Generate the header record for the payroll entry.
+
+    Args:
+        payroll_entry_doc (object): The payroll entry document.
+
+    Returns:
+        str: The generated header record.
+    """
     line = "01"
     line += payroll_entry_doc.name + " " * (25 - len(payroll_entry_doc.name))
     line += "01"
@@ -23,9 +60,22 @@ def export_sis(payroll_entry):
     else:
         line += " " * 20
 
-    lines += line + '\n'
+    line += '\n'
+    return line
 
-    # Schedule Details
+def get_schedule_details(payroll_entry_doc):
+    """
+    Get the schedule details for a payroll entry.
+
+    Args:
+        payroll_entry_doc (object): The payroll entry document.
+
+    Returns:
+        str: The schedule details line.
+
+    Raises:
+        frappe.ValidationError: If the Social Insurance Number or Employees Category or Earnings Type is not set.
+    """
     line = "02"
     custom_sis_number = payroll_entry_doc.custom_sis_number
     if custom_sis_number:
@@ -56,29 +106,5 @@ def export_sis(payroll_entry):
     line += start_date
     line += " " * 14
 
-    lines += line + '\n'
-
-    # Write the line to a text file
-    file_name = f'{payroll_entry_doc.name}.txt'
-    with io.open(file_name, 'w', encoding='utf-8') as f:
-        f.write(lines)
-
-    # Delete existing file with the same name
-    existing_file = frappe.get_value('File', {'file_name': file_name})
-    if existing_file:
-        frappe.delete_doc('File', existing_file)
-
-    # Attach the file to the Payroll Entry
-    with io.open(file_name, 'r', encoding='utf-8') as f:
-        file_data = f.read()
-    file_doc = frappe.get_doc({
-        'doctype': 'File',
-        'file_name': file_name,
-        'attached_to_doctype': 'Payroll Entry',
-        'attached_to_name': payroll_entry,
-        'content': file_data,
-        'is_private': 1
-    })
-    file_doc.insert()
-
-    return file_doc.name
+    line += '\n'
+    return line

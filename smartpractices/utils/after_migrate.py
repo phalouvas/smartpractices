@@ -4,10 +4,6 @@ import os
 from frappe.permissions import add_permission, update_permission_property
 
 def import_item_groups():
-	file_dir = os.path.dirname(os.path.abspath(__file__))
-	file_path = os.path.join(file_dir, 'Salary Component.csv')
-	import_file("Salary Component", file_path, "Insert", False, True)
-	import_social_insurance()
 	# Check if Item Group "Smart Practices" exists. If exists return else create it
 	if frappe.db.exists("Item Group", "Smart Practices"):
 		return

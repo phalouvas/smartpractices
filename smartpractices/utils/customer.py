@@ -24,7 +24,6 @@ def create_quotation(customer):
             "qty": 1
         })
     quotation.insert()
-    quotation.submit()
     return quotation.name
 
 @frappe.whitelist()
@@ -42,5 +41,4 @@ def create_sales_order(customer):
             "qty": 1
         })
     sales_order.insert()
-    sales_order.submit()
     return sales_order.name

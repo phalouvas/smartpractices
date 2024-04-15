@@ -67,10 +67,9 @@ doctype_js = {
 # 	"filters": "smartpractices.utils.jinja_filters"
 # }
 
-after_migrate = [
-    "smartpractices.utils.after_migrate.import_item_groups",
-    "smartpractices.utils.install.after_install"
-    ]
+#after_migrate = [
+#    "smartpractices.utils.after_migrate.import_item_groups",
+#    ]
 
 # Installation
 # ------------

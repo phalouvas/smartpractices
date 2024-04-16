@@ -129,13 +129,12 @@ after_install = "smartpractices.utils.install.after_install"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+    "Customer": {
+        "after_insert": "smartpractices.smart_practices.hooks.customer.after_insert",
+        "after_delete": "smartpractices.smart_practices.hooks.customer.after_delete",
+    }
+}
 
 # Scheduled Tasks
 # ---------------
@@ -184,7 +183,7 @@ after_install = "smartpractices.utils.install.after_install"
 # Ignore links to specified DocTypes when deleting documents
 # -----------------------------------------------------------
 
-# ignore_links_on_delete = ["Communication", "ToDo"]
+ignore_links_on_delete = ["Customer Information"]
 
 # Request Events
 # ----------------

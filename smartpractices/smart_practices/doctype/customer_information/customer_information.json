@@ -1,0 +1,213 @@
+{
+ "actions": [],
+ "autoname": "field:customer_name",
+ "creation": "2024-04-16 07:41:04.268324",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "general_section",
+  "customer",
+  "customer_name",
+  "registration_number",
+  "vat",
+  "country_incorporation",
+  "column_break_xaov",
+  "registration_date",
+  "country_manage",
+  "entity_category_section",
+  "business_entity",
+  "ppmfund",
+  "bgpl",
+  "gdsgob",
+  "column_break_xsqj",
+  "cysec",
+  "npmo",
+  "lamc",
+  "nreog",
+  "nreog_details",
+  "financial_details_section",
+  "lob",
+  "annual_income",
+  "column_break_tjqu",
+  "esof",
+  "noe"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "entity_category_section",
+   "fieldtype": "Section Break",
+   "label": "Entity Category"
+  },
+  {
+   "fieldname": "general_section",
+   "fieldtype": "Section Break",
+   "label": "Information"
+  },
+  {
+   "fieldname": "business_entity",
+   "fieldtype": "Select",
+   "label": "Business Entity - Department of Registrar of Companies",
+   "options": "\nCompany\nTrade Name\nPartnership (Joint Venture)\nCompany Registered Abroad\nPublic Company\nInsurance Company"
+  },
+  {
+   "fieldname": "column_break_xsqj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cysec",
+   "fieldtype": "Select",
+   "label": "Entities regulated by the Cyprus Securities and Exchange Commissions (CySEC)",
+   "options": "\nTrust\nAIF Management Company\nInvestment Firm\nOther"
+  },
+  {
+   "fieldname": "ppmfund",
+   "fieldtype": "Select",
+   "label": "Provident Or Pension or Medical Fund",
+   "options": "\nProvident Fund\nPension Fund\nMedical Fund"
+  },
+  {
+   "fieldname": "npmo",
+   "fieldtype": "Select",
+   "label": "Non-Profit making Organization",
+   "options": "\nAssociation or Organization\nCharity\nFederation\nUnion"
+  },
+  {
+   "fieldname": "bgpl",
+   "fieldtype": "Select",
+   "label": "Body governed by Public Law",
+   "options": "\nEAC\nCyprus Organization\nCyprus Tourism Organization\nOther"
+  },
+  {
+   "fieldname": "lamc",
+   "fieldtype": "Select",
+   "label": "Local Authories-Municipality, Community",
+   "options": "\nMunicipality\nCommunity Council"
+  },
+  {
+   "fieldname": "gdsgob",
+   "fieldtype": "Select",
+   "label": "Government Dept., Semi- Government Org., Board",
+   "options": "\nSemi Governmental Organization\nWater Board\nSewer Board"
+  },
+  {
+   "fieldname": "nreog",
+   "fieldtype": "Select",
+   "label": "Non-registered Entity/Organization/ Group",
+   "options": "\nEmbassy, Diplomatic Mission\nUnion\nArchbishop, Bisthop, Church\nSchool Office, Parent Ass., School Principal Cashier\nOther\nGovernment Dept.& Service"
+  },
+  {
+   "depends_on": "eval:doc.nreog=='Other';",
+   "fieldname": "nreog_details",
+   "fieldtype": "Small Text",
+   "label": "If other, mention"
+  },
+  {
+   "fieldname": "registration_number",
+   "fieldtype": "Data",
+   "label": "Registration Number"
+  },
+  {
+   "fetch_from": "customer.tax_id",
+   "fieldname": "vat",
+   "fieldtype": "Read Only",
+   "label": "VAT No. (where applicable)"
+  },
+  {
+   "fieldname": "column_break_xaov",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "registration_date",
+   "fieldtype": "Date",
+   "label": "Registration Date"
+  },
+  {
+   "fieldname": "country_incorporation",
+   "fieldtype": "Link",
+   "label": "Country of Incorporation",
+   "options": "Country"
+  },
+  {
+   "fieldname": "country_manage",
+   "fieldtype": "Link",
+   "label": "Country of Effective Management",
+   "options": "Country"
+  },
+  {
+   "fieldname": "financial_details_section",
+   "fieldtype": "Section Break",
+   "label": "Financial Details"
+  },
+  {
+   "fieldname": "lob",
+   "fieldtype": "Small Text",
+   "label": "Line of Business"
+  },
+  {
+   "fieldname": "annual_income",
+   "fieldtype": "Currency",
+   "label": "Annual Income (\u20ac)"
+  },
+  {
+   "fieldname": "column_break_tjqu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "esof",
+   "fieldtype": "Small Text",
+   "label": "Entity's Source of Funds"
+  },
+  {
+   "fieldname": "noe",
+   "fieldtype": "Int",
+   "label": "No of Employees",
+   "non_negative": 1
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Read Only",
+   "label": "Customer Name",
+   "unique": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Related Person",
+   "link_fieldname": "customer"
+  }
+ ],
+ "modified": "2024-04-16 09:18:07.060171",
+ "modified_by": "Administrator",
+ "module": "Smart Practices",
+ "name": "Customer Information",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

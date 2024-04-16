@@ -1,0 +1,268 @@
+{
+ "actions": [],
+ "autoname": "field:contact_name",
+ "creation": "2024-04-16 09:01:09.474948",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "column_break_eqbq",
+  "contact",
+  "contact_name",
+  "roles_section",
+  "role_1",
+  "role_3",
+  "role_5",
+  "role_7",
+  "column_break_tivw",
+  "role_2",
+  "role_4",
+  "role_6",
+  "role_8",
+  "section_break_ipgq",
+  "spp",
+  "bossi",
+  "column_break_mvpu",
+  "ubopp",
+  "identity_number",
+  "type_of_identification_doc",
+  "section_break_blkd",
+  "residence_country",
+  "trc1",
+  "tin1",
+  "occupation",
+  "marital_status",
+  "pep_name",
+  "column_break_ccfl",
+  "nationality",
+  "trc2",
+  "tin2",
+  "education_level",
+  "pep",
+  "pep_relation",
+  "pep_connection"
+ ],
+ "fields": [
+  {
+   "fieldname": "contact",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Contact",
+   "options": "Contact",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "roles_section",
+   "fieldtype": "Section Break",
+   "label": "Kindly select all roles/titles/capacities concerting the specific Related Person"
+  },
+  {
+   "fieldname": "role_1",
+   "fieldtype": "Select",
+   "options": "\nChairman / President\nSecretary\nDirector\nShareholder\nUltimate Beneficial Owner\nAuthorised Person to sign documents\nSignatory\nCard Holder\nUser Web Banking\nNominee Shareholder\nOther"
+  },
+  {
+   "fieldname": "role_3",
+   "fieldtype": "Select",
+   "options": "\nChairman / President\nSecretary\nDirector\nShareholder\nUltimate Beneficial Owner\nAuthorised Person to sign documents\nSignatory\nCard Holder\nUser Web Banking\nNominee Shareholder\nOther"
+  },
+  {
+   "fieldname": "role_5",
+   "fieldtype": "Select",
+   "options": "\nChairman / President\nSecretary\nDirector\nShareholder\nUltimate Beneficial Owner\nAuthorised Person to sign documents\nSignatory\nCard Holder\nUser Web Banking\nNominee Shareholder\nOther"
+  },
+  {
+   "fieldname": "role_7",
+   "fieldtype": "Select",
+   "options": "\nChairman / President\nSecretary\nDirector\nShareholder\nUltimate Beneficial Owner\nAuthorised Person to sign documents\nSignatory\nCard Holder\nUser Web Banking\nNominee Shareholder\nOther"
+  },
+  {
+   "fieldname": "column_break_tivw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "role_2",
+   "fieldtype": "Select",
+   "options": "\nChairman / President\nSecretary\nDirector\nShareholder\nUltimate Beneficial Owner\nAuthorised Person to sign documents\nSignatory\nCard Holder\nUser Web Banking\nNominee Shareholder\nOther"
+  },
+  {
+   "fieldname": "role_4",
+   "fieldtype": "Select",
+   "options": "\nChairman / President\nSecretary\nDirector\nShareholder\nUltimate Beneficial Owner\nAuthorised Person to sign documents\nSignatory\nCard Holder\nUser Web Banking\nNominee Shareholder\nOther"
+  },
+  {
+   "fieldname": "role_6",
+   "fieldtype": "Select",
+   "options": "\nChairman / President\nSecretary\nDirector\nShareholder\nUltimate Beneficial Owner\nAuthorised Person to sign documents\nSignatory\nCard Holder\nUser Web Banking\nNominee Shareholder\nOther"
+  },
+  {
+   "fieldname": "role_8",
+   "fieldtype": "Select",
+   "options": "\nChairman / President\nSecretary\nDirector\nShareholder\nUltimate Beneficial Owner\nAuthorised Person to sign documents\nSignatory\nCard Holder\nUser Web Banking\nNominee Shareholder\nOther"
+  },
+  {
+   "fetch_from": "contact.full_name",
+   "fieldname": "contact_name",
+   "fieldtype": "Read Only",
+   "label": "Contact Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_eqbq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer Information",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_ipgq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "spp",
+   "fieldtype": "Int",
+   "label": "In case of Shareholder kindly provide the Participation Percentage (%)",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_mvpu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ubopp",
+   "fieldtype": "Int",
+   "label": "In case of Ultimate Beneficial Owner kindly provide the Participation Percentage (%)",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "bossi",
+   "fieldtype": "Small Text",
+   "label": "Beneficial Owner's Source and Size of Income/Wealth"
+  },
+  {
+   "fieldname": "identity_number",
+   "fieldtype": "Data",
+   "label": "Identity Number"
+  },
+  {
+   "fieldname": "type_of_identification_doc",
+   "fieldtype": "Select",
+   "label": "Type of identification doc",
+   "options": "\nIdentity\nPassport"
+  },
+  {
+   "fieldname": "section_break_blkd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "residence_country",
+   "fieldtype": "Link",
+   "label": "Residence Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "trc1",
+   "fieldtype": "Link",
+   "label": "Tax Residency Country and TIN",
+   "options": "Country"
+  },
+  {
+   "fieldname": "tin1",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_ccfl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Link",
+   "label": "Nationality",
+   "options": "Country"
+  },
+  {
+   "fieldname": "trc2",
+   "fieldtype": "Link",
+   "label": "Tax Residency Country and TIN",
+   "options": "Country"
+  },
+  {
+   "fieldname": "tin2",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "occupation",
+   "fieldtype": "Data",
+   "label": "Occupation"
+  },
+  {
+   "fieldname": "marital_status",
+   "fieldtype": "Select",
+   "label": "Marital Status",
+   "options": "\nSingle\nMarried"
+  },
+  {
+   "fieldname": "education_level",
+   "fieldtype": "Select",
+   "label": "Education Level",
+   "options": "\nLyceum\nBA Diploma\nMA Diploma\nPhD"
+  },
+  {
+   "fieldname": "pep",
+   "fieldtype": "Select",
+   "label": "Politically Exposed Person (PEP)",
+   "options": "\nYes\nNo"
+  },
+  {
+   "depends_on": "eval:doc.pep=='Yes';",
+   "fieldname": "pep_name",
+   "fieldtype": "Data",
+   "label": "Name of PEP",
+   "mandatory_depends_on": "eval:doc.pep=='Yes';"
+  },
+  {
+   "depends_on": "eval:doc.pep=='Yes';",
+   "fieldname": "pep_relation",
+   "fieldtype": "Data",
+   "label": "Relationship with PEP",
+   "mandatory_depends_on": "eval:doc.pep=='Yes';"
+  },
+  {
+   "depends_on": "eval:doc.pep=='Yes';",
+   "fieldname": "pep_connection",
+   "fieldtype": "Data",
+   "label": "Connection with Legal Entity",
+   "mandatory_depends_on": "eval:doc.pep=='Yes';"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-04-16 09:41:09.660265",
+ "modified_by": "Administrator",
+ "module": "Smart Practices",
+ "name": "Related Person",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

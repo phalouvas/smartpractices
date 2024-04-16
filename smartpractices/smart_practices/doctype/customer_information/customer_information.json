@@ -1,12 +1,13 @@
 {
  "actions": [],
- "autoname": "field:customer",
+ "autoname": "field:customer_name",
  "creation": "2024-04-16 07:41:04.268324",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "general_section",
   "customer",
+  "customer_name",
   "registration_number",
   "vat",
   "country_incorporation",
@@ -170,11 +171,23 @@
    "fieldtype": "Int",
    "label": "No of Employees",
    "non_negative": 1
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Read Only",
+   "label": "Customer Name",
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-04-16 08:55:36.750876",
+ "links": [
+  {
+   "link_doctype": "Related Person",
+   "link_fieldname": "customer"
+  }
+ ],
+ "modified": "2024-04-16 09:18:07.060171",
  "modified_by": "Administrator",
  "module": "Smart Practices",
  "name": "Customer Information",

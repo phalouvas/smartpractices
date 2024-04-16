@@ -7,6 +7,12 @@
  "field_order": [
   "general_section",
   "customer",
+  "registration_number",
+  "vat",
+  "country_incorporation",
+  "column_break_xaov",
+  "registration_date",
+  "country_manage",
   "entity_category_section",
   "business_entity",
   "ppmfund",
@@ -17,7 +23,13 @@
   "npmo",
   "lamc",
   "nreog",
-  "nreog_details"
+  "nreog_details",
+  "financial_details_section",
+  "lob",
+  "annual_income",
+  "column_break_tjqu",
+  "esof",
+  "noe"
  ],
  "fields": [
   {
@@ -36,7 +48,8 @@
   },
   {
    "fieldname": "general_section",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Information"
   },
   {
    "fieldname": "business_entity",
@@ -95,11 +108,73 @@
    "fieldname": "nreog_details",
    "fieldtype": "Small Text",
    "label": "If other, mention"
+  },
+  {
+   "fieldname": "registration_number",
+   "fieldtype": "Data",
+   "label": "Registration Number"
+  },
+  {
+   "fetch_from": "customer.tax_id",
+   "fieldname": "vat",
+   "fieldtype": "Read Only",
+   "label": "VAT No. (where applicable)"
+  },
+  {
+   "fieldname": "column_break_xaov",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "registration_date",
+   "fieldtype": "Date",
+   "label": "Registration Date"
+  },
+  {
+   "fieldname": "country_incorporation",
+   "fieldtype": "Link",
+   "label": "Country of Incorporation",
+   "options": "Country"
+  },
+  {
+   "fieldname": "country_manage",
+   "fieldtype": "Link",
+   "label": "Country of Effective Management",
+   "options": "Country"
+  },
+  {
+   "fieldname": "financial_details_section",
+   "fieldtype": "Section Break",
+   "label": "Financial Details"
+  },
+  {
+   "fieldname": "lob",
+   "fieldtype": "Small Text",
+   "label": "Line of Business"
+  },
+  {
+   "fieldname": "annual_income",
+   "fieldtype": "Currency",
+   "label": "Annual Income (\u20ac)"
+  },
+  {
+   "fieldname": "column_break_tjqu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "esof",
+   "fieldtype": "Small Text",
+   "label": "Entity's Source of Funds"
+  },
+  {
+   "fieldname": "noe",
+   "fieldtype": "Int",
+   "label": "No of Employees",
+   "non_negative": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-16 08:07:41.510510",
+ "modified": "2024-04-16 08:55:36.750876",
  "modified_by": "Administrator",
  "module": "Smart Practices",
  "name": "Customer Information",

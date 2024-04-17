@@ -137,6 +137,12 @@ doc_events = {
     "Project": {
         "after_insert": "smartpractices.smart_practices.hooks.project.after_insert",
     },
+    "Quotation": {
+        "before_submit": "smartpractices.smart_practices.hooks.quotation.before_submit",
+    },
+    "Sales Order": {
+        "before_submit": "smartpractices.smart_practices.hooks.sales_order.before_submit",
+    },
 }
 
 # Scheduled Tasks

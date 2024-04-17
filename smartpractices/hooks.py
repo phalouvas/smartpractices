@@ -133,7 +133,10 @@ doc_events = {
     "Customer": {
         "after_insert": "smartpractices.smart_practices.hooks.customer.after_insert",
         "after_delete": "smartpractices.smart_practices.hooks.customer.after_delete",
-    }
+    },
+    "Project": {
+        "after_insert": "smartpractices.smart_practices.hooks.project.after_insert",
+    },
 }
 
 # Scheduled Tasks

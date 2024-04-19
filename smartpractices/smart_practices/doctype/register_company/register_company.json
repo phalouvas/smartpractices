@@ -23,7 +23,10 @@
   "issued_share_capital",
   "issued_no",
   "issued_currency",
-  "issued_par_value"
+  "issued_par_value",
+  "section_break_sswf",
+  "shareholders",
+  "ultimate_beneficial_owners"
  ],
  "fields": [
   {
@@ -130,11 +133,27 @@
    "fieldname": "issued_par_value",
    "fieldtype": "Currency",
    "label": "Par value"
+  },
+  {
+   "fieldname": "section_break_sswf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "shareholders",
+   "fieldtype": "Table",
+   "label": "Company\u2019s Shareholder(s) ",
+   "options": "Company Person"
+  },
+  {
+   "fieldname": "ultimate_beneficial_owners",
+   "fieldtype": "Table",
+   "label": "Ultimate Beneficial Owner(s)",
+   "options": "Company Person"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-19 07:23:25.451994",
+ "modified": "2024-04-19 07:47:46.428992",
  "modified_by": "Administrator",
  "module": "Smart Practices",
  "name": "Register Company",

@@ -1,0 +1,157 @@
+{
+ "actions": [],
+ "creation": "2024-04-19 06:25:06.235156",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_1",
+  "person_name",
+  "type",
+  "column_break_dwtd",
+  "address",
+  "contact_address",
+  "section_break_twcu",
+  "passport_number",
+  "identity_card_number",
+  "alien_registration_number",
+  "registration_number",
+  "column_break_cwuf",
+  "passport_doi",
+  "identity_card_doi",
+  "alien_registration_number_doi",
+  "date_of_registration",
+  "column_break_iwhc",
+  "passport_expiry_date",
+  "identity_card_number_expiry_date",
+  "alien_registration_number_expiry_date"
+ ],
+ "fields": [
+  {
+   "description": "(please give full details of each person appointed by you and provide us with \npassport copies and utility bills) ",
+   "fieldname": "section_1",
+   "fieldtype": "Section Break",
+   "label": "Person Details"
+  },
+  {
+   "description": "(Please include number & street, town, postal code and country. If address \nis a PO Box, also state full residential address)",
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "label": "Permanent Residential Address",
+   "options": "Address"
+  },
+  {
+   "description": "Please state both the person\u2019s passport, identity card and alien\u2019s registration number (where applicable), if \nthe director is a physical person. ",
+   "fieldname": "section_break_twcu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "passport_number",
+   "fieldtype": "Data",
+   "label": "Passport Number"
+  },
+  {
+   "fieldname": "identity_card_number",
+   "fieldtype": "Data",
+   "label": "Identity Card Number"
+  },
+  {
+   "depends_on": "eval:doc.type=='Director' || doc.type=='Secretary'",
+   "fieldname": "alien_registration_number",
+   "fieldtype": "Data",
+   "label": "Alien\u2019s Registration Number"
+  },
+  {
+   "depends_on": "eval:doc.type=='Director' || doc.type=='Secretary'",
+   "description": "(in case of a legal entity)",
+   "fieldname": "registration_number",
+   "fieldtype": "Data",
+   "label": "Registration Number"
+  },
+  {
+   "fieldname": "column_break_iwhc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "passport_expiry_date",
+   "fieldtype": "Date",
+   "label": "Expiry Date"
+  },
+  {
+   "fieldname": "identity_card_number_expiry_date",
+   "fieldtype": "Date",
+   "label": "Expiry Date"
+  },
+  {
+   "depends_on": "eval:doc.type=='Director' || doc.type=='Secretary'",
+   "fieldname": "alien_registration_number_expiry_date",
+   "fieldtype": "Date",
+   "label": "Expiry Date"
+  },
+  {
+   "description": "(as it appears on the passport or identification card) ",
+   "fieldname": "person_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Full Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "\nDirector\nSecretary\nShareholder\nUltimate Beneficial Owner",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_cwuf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "passport_doi",
+   "fieldtype": "Date",
+   "label": "Date of Issue"
+  },
+  {
+   "fieldname": "identity_card_doi",
+   "fieldtype": "Date",
+   "label": "Date of Issue"
+  },
+  {
+   "depends_on": "eval:doc.type=='Director' || doc.type=='Secretary'",
+   "fieldname": "alien_registration_number_doi",
+   "fieldtype": "Date",
+   "label": "Date of Issue"
+  },
+  {
+   "depends_on": "eval:doc.type=='Director' || doc.type=='Secretary'",
+   "fieldname": "date_of_registration",
+   "fieldtype": "Date",
+   "label": "Date  of Registration"
+  },
+  {
+   "fieldname": "column_break_dwtd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "(if different from above)",
+   "fieldname": "contact_address",
+   "fieldtype": "Link",
+   "label": "Business / Correspondence Address",
+   "options": "Address"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-04-19 07:37:45.987525",
+ "modified_by": "Administrator",
+ "module": "Smart Practices",
+ "name": "Company Person",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

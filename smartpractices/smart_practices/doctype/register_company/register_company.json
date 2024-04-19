@@ -9,7 +9,21 @@
   "section_1",
   "customer",
   "company_name",
-  "proposed_activities"
+  "proposed_activities",
+  "tab_2_tab",
+  "section_2",
+  "company_structure",
+  "registered_office",
+  "section_3",
+  "authorized_share_capital",
+  "autorized_no",
+  "authorized_currency",
+  "authorized_par_value",
+  "column_break_ofjs",
+  "issued_share_capital",
+  "issued_no",
+  "issued_currency",
+  "issued_par_value"
  ],
  "fields": [
   {
@@ -38,11 +52,89 @@
    "fieldtype": "Text Editor",
    "label": "Proposed Activities",
    "reqd": 1
+  },
+  {
+   "fieldname": "company_structure",
+   "fieldtype": "Table",
+   "label": "Company Structure",
+   "options": "Company Person"
+  },
+  {
+   "description": "Please give full details of all directors and the secretary appointed by you and provide us with \npassport copies and utility bills. State both the person's passport, identity card and alien\u2019s registration number (where applicable), if \nthe director is a physical person.",
+   "fieldname": "section_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "registered_office",
+   "fieldtype": "Small Text",
+   "label": "Registered Office"
+  },
+  {
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "Company's Structure"
+  },
+  {
+   "description": "(Authorised capital may be stated in any \ncurrency) ",
+   "fieldname": "section_3",
+   "fieldtype": "Section Break",
+   "label": "Share Capital of the Company"
+  },
+  {
+   "fieldname": "authorized_share_capital",
+   "fieldtype": "Heading",
+   "label": "Authorized Share Capital"
+  },
+  {
+   "fieldname": "authorized_currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "default": "1",
+   "description": "1.00 each",
+   "fieldname": "authorized_par_value",
+   "fieldtype": "Currency",
+   "label": "Par value"
+  },
+  {
+   "description": "Shares of",
+   "fieldname": "autorized_no",
+   "fieldtype": "Int",
+   "label": "No. of Shares"
+  },
+  {
+   "fieldname": "column_break_ofjs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "issued_share_capital",
+   "fieldtype": "Heading",
+   "label": "Issued Share Capital"
+  },
+  {
+   "description": "Shares of",
+   "fieldname": "issued_no",
+   "fieldtype": "Int",
+   "label": "No. of Shares"
+  },
+  {
+   "fieldname": "issued_currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "description": "1.00 each",
+   "fieldname": "issued_par_value",
+   "fieldtype": "Currency",
+   "label": "Par value"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-19 06:10:27.071950",
+ "modified": "2024-04-19 07:23:25.451994",
  "modified_by": "Administrator",
  "module": "Smart Practices",
  "name": "Register Company",

@@ -1,24 +1,52 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:company_name",
  "creation": "2024-04-19 06:02:37.639623",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_o9ac"
+  "section_1",
+  "customer",
+  "company_name",
+  "proposed_activities"
  ],
  "fields": [
   {
-   "fieldname": "section_break_o9ac",
-   "fieldtype": "Section Break"
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "label": "Company Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "section_1",
+   "fieldtype": "Section Break",
+   "label": "Company Name & Proposed Activities"
+  },
+  {
+   "description": "(Please provide a detailed description of the nature of your proposed business activities, including details of \ngoods and services you will trade/provide. Generic descriptions like Trading, Investments, Consultancy \nServices, Agent, Real Estate etc. are not acceptable.) ",
+   "fieldname": "proposed_activities",
+   "fieldtype": "Text Editor",
+   "label": "Proposed Activities",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-19 06:02:37.639623",
+ "modified": "2024-04-19 06:10:27.071950",
  "modified_by": "Administrator",
  "module": "Smart Practices",
  "name": "Register Company",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

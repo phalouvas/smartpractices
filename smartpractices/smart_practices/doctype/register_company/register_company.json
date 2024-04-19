@@ -26,13 +26,22 @@
   "issued_par_value",
   "section_break_sswf",
   "shareholders",
-  "ultimate_beneficial_owners"
+  "ultimate_beneficial_owners",
+  "tab_3_tab",
+  "section_break_dwqn",
+  "declaration_acceptance",
+  "section_break_khyu",
+  "acceptance_name",
+  "acceptance_signature",
+  "column_break_fbob",
+  "acceptance_date"
  ],
  "fields": [
   {
    "fieldname": "customer",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Customer",
    "options": "Customer",
    "reqd": 1
@@ -40,6 +49,8 @@
   {
    "fieldname": "company_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Company Name",
    "reqd": 1,
    "unique": 1
@@ -149,11 +160,48 @@
    "fieldtype": "Table",
    "label": "Ultimate Beneficial Owner(s)",
    "options": "Company Person"
+  },
+  {
+   "depends_on": "eval:doc.__islocal != true",
+   "fieldname": "tab_3_tab",
+   "fieldtype": "Tab Break",
+   "label": "Declaration of Ultimate Beneficial Owner"
+  },
+  {
+   "fieldname": "declaration_acceptance",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "section_break_dwqn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_khyu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "acceptance_name",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "column_break_fbob",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "acceptance_date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "acceptance_signature",
+   "fieldtype": "Signature",
+   "label": "Signature"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-19 07:47:46.428992",
+ "modified": "2024-04-19 08:14:31.753116",
  "modified_by": "Administrator",
  "module": "Smart Practices",
  "name": "Register Company",

@@ -12,6 +12,7 @@
   "column_break_dwtd",
   "address",
   "contact_address",
+  "contact",
   "section_break_twcu",
   "passport_number",
   "identity_card_number",
@@ -29,7 +30,24 @@
   "section_break_hpod",
   "current_occupation",
   "column_break_jtcb",
-  "occupation_address"
+  "occupation_address",
+  "pep",
+  "none",
+  "column_break_owwr",
+  "beneficial_owner",
+  "column_break_gter",
+  "close_relative",
+  "column_break_pnja",
+  "close_associate",
+  "section_break_xmiy",
+  "pep_name",
+  "pep_country",
+  "column_break_jsdl",
+  "pep_position",
+  "section_4",
+  "pep_from",
+  "column_break_mzld",
+  "pep_to"
  ],
  "fields": [
   {
@@ -147,7 +165,7 @@
   {
    "depends_on": "eval:doc.type=='Shareholder' || doc.type=='Ultimate Beneficial Owner'",
    "fieldname": "holding_",
-   "fieldtype": "Int",
+   "fieldtype": "Percent",
    "label": "Holding %",
    "non_negative": 1
   },
@@ -170,12 +188,107 @@
   {
    "fieldname": "column_break_jtcb",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Link",
+   "label": "Contact",
+   "options": "Contact"
+  },
+  {
+   "depends_on": "eval:doc.type=='Shareholder' || doc.type=='Ultimate Beneficial Owner'",
+   "description": "Please specify whether the beneficial owner (yourself)/ any immediate family member / associate hold/held a \nprominent public function the last 12 months",
+   "fieldname": "pep",
+   "fieldtype": "Section Break",
+   "label": "Indication for Politically Exposed Person (PEP)"
+  },
+  {
+   "default": "0",
+   "fieldname": "none",
+   "fieldtype": "Check",
+   "label": "None"
+  },
+  {
+   "columns": 4,
+   "fieldname": "pep_name",
+   "fieldtype": "Data",
+   "label": "Name of the person that holds / held the prominent public function"
+  },
+  {
+   "fieldname": "column_break_owwr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "beneficial_owner",
+   "fieldtype": "Check",
+   "label": "Beneficial Owner"
+  },
+  {
+   "fieldname": "column_break_gter",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "close_relative",
+   "fieldtype": "Check",
+   "label": "Close Relative"
+  },
+  {
+   "fieldname": "column_break_pnja",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "close_associate",
+   "fieldtype": "Check",
+   "label": "Close Associate"
+  },
+  {
+   "depends_on": "eval:doc.type=='Shareholder' || doc.type=='Ultimate Beneficial Owner'",
+   "fieldname": "section_break_xmiy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "pep_position",
+   "fieldtype": "Data",
+   "label": "Position"
+  },
+  {
+   "fieldname": "pep_country",
+   "fieldtype": "Link",
+   "label": "Country of the position held",
+   "options": "Country"
+  },
+  {
+   "depends_on": "eval:doc.type=='Shareholder' || doc.type=='Ultimate Beneficial Owner'",
+   "fieldname": "section_4",
+   "fieldtype": "Section Break",
+   "label": "Period in which this individual holds / held political / public function"
+  },
+  {
+   "fieldname": "pep_from",
+   "fieldtype": "Date",
+   "label": "From"
+  },
+  {
+   "fieldname": "column_break_mzld",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pep_to",
+   "fieldtype": "Date",
+   "label": "To"
+  },
+  {
+   "fieldname": "column_break_jsdl",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-04-19 07:49:40.479840",
+ "modified": "2024-04-19 08:06:41.409653",
  "modified_by": "Administrator",
  "module": "Smart Practices",
  "name": "Company Person",

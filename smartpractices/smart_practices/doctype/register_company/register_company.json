@@ -31,10 +31,25 @@
   "section_break_dwqn",
   "declaration_acceptance",
   "section_break_khyu",
-  "acceptance_name",
-  "acceptance_signature",
+  "acceptance_name_1",
+  "acceptance_date_1",
+  "acceptance_signature_1",
   "column_break_fbob",
-  "acceptance_date"
+  "acceptance_name_2",
+  "acceptance_date_2",
+  "acceptance_signature_2",
+  "column_break_notl",
+  "acceptance_name_3",
+  "acceptance_date_3",
+  "acceptance_signature_3",
+  "tab_4_tab",
+  "section_5",
+  "ack_notice",
+  "section_break_znhb",
+  "ack_name",
+  "ack_date",
+  "column_break_ytxz",
+  "ack_signature"
  ],
  "fields": [
   {
@@ -180,28 +195,100 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "acceptance_name",
-   "fieldtype": "Data",
-   "label": "Name"
-  },
-  {
    "fieldname": "column_break_fbob",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "acceptance_date",
+   "fieldname": "acceptance_name_1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "acceptance_date_1",
    "fieldtype": "Date",
    "label": "Date"
   },
   {
-   "fieldname": "acceptance_signature",
+   "fieldname": "acceptance_signature_1",
    "fieldtype": "Signature",
    "label": "Signature"
+  },
+  {
+   "fieldname": "column_break_notl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "acceptance_name_2",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "acceptance_name_3",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "acceptance_date_2",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "acceptance_date_3",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "acceptance_signature_2",
+   "fieldtype": "Signature",
+   "label": "Signature"
+  },
+  {
+   "fieldname": "acceptance_signature_3",
+   "fieldtype": "Signature",
+   "label": "Signature"
+  },
+  {
+   "depends_on": "eval:doc.__islocal != true",
+   "fieldname": "tab_4_tab",
+   "fieldtype": "Tab Break",
+   "label": "Statement of acknowledgment"
+  },
+  {
+   "fieldname": "ack_notice",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "section_5",
+   "fieldtype": "Section Break",
+   "label": "Statement of acknowledgment in relation to the collection and processing of personal data"
+  },
+  {
+   "fieldname": "ack_name",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "ack_date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "ack_signature",
+   "fieldtype": "Signature",
+   "label": "Signature"
+  },
+  {
+   "fieldname": "section_break_znhb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ytxz",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-19 08:14:31.753116",
+ "modified": "2024-04-19 08:49:33.615167",
  "modified_by": "Administrator",
  "module": "Smart Practices",
  "name": "Register Company",

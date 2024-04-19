@@ -1,0 +1,314 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:company_name",
+ "creation": "2024-04-19 06:02:37.639623",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_1",
+  "customer",
+  "company_name",
+  "proposed_activities",
+  "tab_2_tab",
+  "section_2",
+  "company_structure",
+  "registered_office",
+  "section_3",
+  "authorized_share_capital",
+  "autorized_no",
+  "authorized_currency",
+  "authorized_par_value",
+  "column_break_ofjs",
+  "issued_share_capital",
+  "issued_no",
+  "issued_currency",
+  "issued_par_value",
+  "section_break_sswf",
+  "shareholders",
+  "ultimate_beneficial_owners",
+  "tab_3_tab",
+  "section_break_dwqn",
+  "declaration_acceptance",
+  "section_break_khyu",
+  "acceptance_name_1",
+  "acceptance_date_1",
+  "acceptance_signature_1",
+  "column_break_fbob",
+  "acceptance_name_2",
+  "acceptance_date_2",
+  "acceptance_signature_2",
+  "column_break_notl",
+  "acceptance_name_3",
+  "acceptance_date_3",
+  "acceptance_signature_3",
+  "tab_4_tab",
+  "section_5",
+  "ack_notice",
+  "section_break_znhb",
+  "ack_name",
+  "ack_date",
+  "column_break_ytxz",
+  "ack_signature"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "section_1",
+   "fieldtype": "Section Break",
+   "label": "Company Name & Proposed Activities"
+  },
+  {
+   "description": "(Please provide a detailed description of the nature of your proposed business activities, including details of \ngoods and services you will trade/provide. Generic descriptions like Trading, Investments, Consultancy \nServices, Agent, Real Estate etc. are not acceptable.) ",
+   "fieldname": "proposed_activities",
+   "fieldtype": "Text Editor",
+   "label": "Proposed Activities",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company_structure",
+   "fieldtype": "Table",
+   "label": "Company Structure",
+   "options": "Company Person"
+  },
+  {
+   "description": "Please give full details of all directors and the secretary appointed by you and provide us with \npassport copies and utility bills. State both the person's passport, identity card and alien\u2019s registration number (where applicable), if \nthe director is a physical person.",
+   "fieldname": "section_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "registered_office",
+   "fieldtype": "Small Text",
+   "label": "Registered Office"
+  },
+  {
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "Company's Structure"
+  },
+  {
+   "description": "(Authorised capital may be stated in any \ncurrency) ",
+   "fieldname": "section_3",
+   "fieldtype": "Section Break",
+   "label": "Share Capital of the Company"
+  },
+  {
+   "fieldname": "authorized_share_capital",
+   "fieldtype": "Heading",
+   "label": "Authorized Share Capital"
+  },
+  {
+   "fieldname": "authorized_currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "default": "1",
+   "description": "1.00 each",
+   "fieldname": "authorized_par_value",
+   "fieldtype": "Currency",
+   "label": "Par value"
+  },
+  {
+   "description": "Shares of",
+   "fieldname": "autorized_no",
+   "fieldtype": "Int",
+   "label": "No. of Shares"
+  },
+  {
+   "fieldname": "column_break_ofjs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "issued_share_capital",
+   "fieldtype": "Heading",
+   "label": "Issued Share Capital"
+  },
+  {
+   "description": "Shares of",
+   "fieldname": "issued_no",
+   "fieldtype": "Int",
+   "label": "No. of Shares"
+  },
+  {
+   "fieldname": "issued_currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "description": "1.00 each",
+   "fieldname": "issued_par_value",
+   "fieldtype": "Currency",
+   "label": "Par value"
+  },
+  {
+   "fieldname": "section_break_sswf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "shareholders",
+   "fieldtype": "Table",
+   "label": "Company\u2019s Shareholder(s) ",
+   "options": "Company Person"
+  },
+  {
+   "fieldname": "ultimate_beneficial_owners",
+   "fieldtype": "Table",
+   "label": "Ultimate Beneficial Owner(s)",
+   "options": "Company Person"
+  },
+  {
+   "depends_on": "eval:doc.__islocal != true",
+   "fieldname": "tab_3_tab",
+   "fieldtype": "Tab Break",
+   "label": "Declaration of Ultimate Beneficial Owner"
+  },
+  {
+   "fieldname": "declaration_acceptance",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "section_break_dwqn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_khyu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_fbob",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "acceptance_name_1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "acceptance_date_1",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "acceptance_signature_1",
+   "fieldtype": "Signature",
+   "label": "Signature"
+  },
+  {
+   "fieldname": "column_break_notl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "acceptance_name_2",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "acceptance_name_3",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "acceptance_date_2",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "acceptance_date_3",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "acceptance_signature_2",
+   "fieldtype": "Signature",
+   "label": "Signature"
+  },
+  {
+   "fieldname": "acceptance_signature_3",
+   "fieldtype": "Signature",
+   "label": "Signature"
+  },
+  {
+   "depends_on": "eval:doc.__islocal != true",
+   "fieldname": "tab_4_tab",
+   "fieldtype": "Tab Break",
+   "label": "Statement of acknowledgment"
+  },
+  {
+   "fieldname": "ack_notice",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "section_5",
+   "fieldtype": "Section Break",
+   "label": "Statement of acknowledgment in relation to the collection and processing of personal data"
+  },
+  {
+   "fieldname": "ack_name",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "ack_date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "ack_signature",
+   "fieldtype": "Signature",
+   "label": "Signature"
+  },
+  {
+   "fieldname": "section_break_znhb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ytxz",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-04-19 08:49:33.615167",
+ "modified_by": "Administrator",
+ "module": "Smart Practices",
+ "name": "Register Company",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

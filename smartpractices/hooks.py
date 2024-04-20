@@ -29,7 +29,7 @@ app_license = "gpl-3.0"
 
 # include js in doctype views
 doctype_js = {
-    "Customer": "public/js/customer.js",
+    #"Customer": "public/js/customer.js",
     "Payroll Entry": "public/js/payroll_entry.js"
     }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}

@@ -7,7 +7,8 @@ from frappe.permissions import add_permission, update_permission_property
 def after_install():
 	add_standard_navbar_items()
 	import_app_data()
-	create_project_template()	
+	create_project_template()
+	update_stock_settings()
 
 def add_standard_navbar_items():
 	navbar_settings = frappe.get_single("Navbar Settings")
@@ -148,3 +149,7 @@ def import_social_insurance():
 	salary_structure.insert(ignore_permissions=True)
 	salary_structure.submit()
 	
+def update_stock_settings():
+	stock_settings = frappe.get_single("Stock Settings")
+	stock_settings.auto_insert_price_list_rate_if_missing = 0
+	stock_settings.save()

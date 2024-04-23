@@ -100,7 +100,8 @@
   {
    "description": "Please give full details of all directors and the secretary appointed by you and provide us with \npassport copies and utility bills. State both the person's passport, identity card and alien\u2019s registration number (where applicable), if \nthe director is a physical person.",
    "fieldname": "section_2",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Company's Structure"
   },
   {
    "fieldname": "registered_office",
@@ -197,7 +198,8 @@
   },
   {
    "fieldname": "section_break_dwqn",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Declaration of Ultimate Beneficial Owner"
   },
   {
    "fieldname": "section_break_khyu",
@@ -345,7 +347,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-23 06:40:41.537363",
+ "modified": "2024-04-23 09:06:25.778626",
  "modified_by": "Administrator",
  "module": "Smart Practices",
  "name": "Register Company",

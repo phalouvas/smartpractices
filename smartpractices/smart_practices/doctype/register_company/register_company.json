@@ -8,7 +8,10 @@
  "field_order": [
   "section_1",
   "customer",
+  "column_break_livp",
   "company_name",
+  "section_break_weyu",
+  "status",
   "proposed_activities",
   "tab_2_tab",
   "section_2",
@@ -27,6 +30,10 @@
   "section_break_sswf",
   "shareholders",
   "ultimate_beneficial_owners",
+  "section_break_bobx",
+  "source_wealth",
+  "column_break_nnct",
+  "source_fund",
   "tab_3_tab",
   "section_break_dwqn",
   "declaration_acceptance",
@@ -284,11 +291,45 @@
   {
    "fieldname": "column_break_ytxz",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_bobx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "source_wealth",
+   "fieldtype": "Small Text",
+   "label": "Source of Wealth"
+  },
+  {
+   "fieldname": "column_break_nnct",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "source_fund",
+   "fieldtype": "Small Text",
+   "label": "Source of Fund"
+  },
+  {
+   "fieldname": "column_break_livp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_weyu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Pending\nCompleted\nCancelled"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-19 08:49:33.615167",
+ "modified": "2024-04-23 06:21:01.861384",
  "modified_by": "Administrator",
  "module": "Smart Practices",
  "name": "Register Company",

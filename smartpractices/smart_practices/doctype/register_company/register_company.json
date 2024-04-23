@@ -10,6 +10,7 @@
   "customer",
   "column_break_livp",
   "company_name",
+  "company",
   "section_break_weyu",
   "status",
   "proposed_activities",
@@ -51,6 +52,7 @@
   "acceptance_signature_3",
   "tab_4_tab",
   "section_5",
+  "implemented_from",
   "ack_notice",
   "section_break_znhb",
   "ack_name",
@@ -325,11 +327,25 @@
    "in_standard_filter": 1,
    "label": "Status",
    "options": "Pending\nCompleted\nCancelled"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fetch_from": "company.company_name",
+   "fetch_if_empty": 1,
+   "fieldname": "implemented_from",
+   "fieldtype": "Data",
+   "label": "Implemented From"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-23 06:21:01.861384",
+ "modified": "2024-04-23 06:40:41.537363",
  "modified_by": "Administrator",
  "module": "Smart Practices",
  "name": "Register Company",

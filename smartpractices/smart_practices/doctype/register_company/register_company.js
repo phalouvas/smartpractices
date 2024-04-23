@@ -2,7 +2,7 @@
 frappe.ui.form.on("Register Company", {
     refresh(frm) {
         if (!frm.doc.__islocal) {
-            frm.set_df_property('declaration_acceptance', 'options', '<p>I/We the undersigned, being the Ultimate Beneficial Owner(s) the of the company <b>' + frm.doc.implemented_from + '</b> by signing this form declare that the information given hereunder and, in the documents, requested hereby is to the best of my/our knowledge true and accurate as the date hereof.</p>');
+            frm.set_df_property('declaration_acceptance', 'options', '<p>I/We the undersigned, being the Ultimate Beneficial Owner(s) the of the company <b>' + frm.doc.company_name + '</b> by signing this form declare that the information given hereunder and, in the documents, requested hereby is to the best of my/our knowledge true and accurate as the date hereof.</p>');
             frm.set_df_property('ack_notice', 'options', 
             '<p><b>' + frm.doc.implemented_from + '</b> (term which includes its every time subsidiaries and other connected companies), herein called “<b>' + frm.doc.implemented_from + '</b>”, may collect, process, store and transfer any personal data related to you in accordance of the applicable Processing of Personal Data Protection Laws. </p>'
             + '<p>Data includes information relating to you which has been given or shall be given to <b>' + frm.doc.implemented_from + '</b> to carry out its internal due diligence process, client acceptance or engagement procedures, in reference to applicable legal and/or regulatory requirements or for quality review purposes: </p>'

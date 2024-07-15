@@ -10,7 +10,6 @@
   "customer",
   "column_break_livp",
   "company_name",
-  "company",
   "section_break_weyu",
   "status",
   "proposed_activities",
@@ -333,13 +332,6 @@
    "options": "Pending\nCompleted\nCancelled"
   },
   {
-   "fieldname": "company",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "label": "Company",
-   "options": "Company"
-  },
-  {
    "fetch_from": "company.company_name",
    "fetch_if_empty": 1,
    "fieldname": "implemented_from",
@@ -358,7 +350,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-15 07:52:29.056970",
+ "modified": "2024-07-15 08:09:45.137369",
  "modified_by": "Administrator",
  "module": "Smart Practices",
  "name": "Register Company",

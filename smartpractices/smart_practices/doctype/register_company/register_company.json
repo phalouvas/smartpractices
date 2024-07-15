@@ -50,6 +50,8 @@
   "acceptance_name_3",
   "acceptance_date_3",
   "acceptance_signature_3",
+  "section_break_hkje",
+  "documents_list",
   "tab_4_tab",
   "section_5",
   "implemented_from",
@@ -343,11 +345,20 @@
    "fieldname": "implemented_from",
    "fieldtype": "Data",
    "label": "Implemented From"
+  },
+  {
+   "fieldname": "section_break_hkje",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "documents_list",
+   "fieldtype": "HTML",
+   "options": "<div class=\"section-head\">\n    Checklist of documents to be submitted with this application\n    <span class=\"ml-2 collapse-indicator mb-1\" style=\"display: none;\"></span>\n</div>\n\n<p>In addition to this form, please submit the following: </p>\n<ul>\n    <li>Notarized or certified (as applicable) colored copy of valid passport bearing a clear photograph \n        and containing the signature page of the document.</li>\n        <li>Second governmental notarized or certified (as applicable) colored identification document, \n            preferably identity card or internal passport bearing a clear photograph and containing the \n            signature page of the document. </li>\n            <li>Original Utility Bill showing the residential address.</li>\n</ul>\n<p>Kindly note that all documents must be officially translated in English, if not in English or Greek, and \nin any case must not be older than 3 months.</p>\n<p>A call meeting can be required at any time with a prior notification.</p>"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-23 09:06:25.778626",
+ "modified": "2024-07-15 07:52:29.056970",
  "modified_by": "Administrator",
  "module": "Smart Practices",
  "name": "Register Company",

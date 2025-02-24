@@ -13,6 +13,10 @@
   "address",
   "contact_address",
   "contact",
+  "address_contacts",
+  "address_html",
+  "column_break_zcum",
+  "contact_html",
   "section_break_twcu",
   "passport_number",
   "identity_card_number",
@@ -283,12 +287,34 @@
   {
    "fieldname": "column_break_jsdl",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address_contacts",
+   "fieldtype": "Section Break",
+   "label": "Address & Contacts"
+  },
+  {
+   "depends_on": "eval: !doc.__islocal",
+   "fieldname": "address_html",
+   "fieldtype": "HTML",
+   "label": "Address HTML"
+  },
+  {
+   "fieldname": "column_break_zcum",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval: !doc.__islocal",
+   "fieldname": "contact_html",
+   "fieldtype": "HTML",
+   "label": "Contact HTML",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-04-19 08:06:41.409653",
+ "modified": "2025-02-23 15:16:00.447640",
  "modified_by": "Administrator",
  "module": "Smart Practices",
  "name": "Company Person",

@@ -9,6 +9,10 @@
   "column_break_eqbq",
   "contact",
   "contact_name",
+  "address_contacts",
+  "address_html",
+  "column_break_oruc",
+  "contact_html",
   "roles_section",
   "role_1",
   "role_3",
@@ -238,11 +242,34 @@
    "fieldtype": "Data",
    "label": "Connection with Legal Entity",
    "mandatory_depends_on": "eval:doc.pep=='Yes';"
+  },
+  {
+   "depends_on": "eval: !doc.__islocal",
+   "fieldname": "address_html",
+   "fieldtype": "HTML",
+   "label": "Address HTML",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval: !doc.__islocal",
+   "fieldname": "contact_html",
+   "fieldtype": "HTML",
+   "label": "Contact HTML",
+   "read_only": 1
+  },
+  {
+   "fieldname": "address_contacts",
+   "fieldtype": "Section Break",
+   "label": "Address & Contacts"
+  },
+  {
+   "fieldname": "column_break_oruc",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-04-16 09:41:09.660265",
+ "modified": "2025-02-23 15:11:24.818788",
  "modified_by": "Administrator",
  "module": "Smart Practices",
  "name": "Related Person",

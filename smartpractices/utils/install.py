@@ -7,8 +7,14 @@ from frappe.permissions import add_permission, update_permission_property
 def after_install():
 	add_standard_navbar_items()
 	import_app_data()
-	create_project_template()
-	update_stock_settings()
+	try:
+		create_project_template()
+	except Exception as e:
+		frappe.logger().warning(f"Error creating project template: {str(e)}")
+	try:
+		update_stock_settings()
+	except Exception as e:
+		frappe.logger().warning(f"Error updating stock settings: {str(e)}")
 
 def add_standard_navbar_items():
 	navbar_settings = frappe.get_single("Navbar Settings")
@@ -100,15 +106,31 @@ def import_app_data():
 	except Exception as e:
 		frappe.logger().warning(f"Error importing Task.csv: {str(e)}")
 
-	file_path = os.path.join(file_dir, 'Module Profile.csv')
-	import_file("Module Profile", file_path, "Insert", False, True)
+	try:
+		file_path = os.path.join(file_dir, 'Module Profile.csv')
+		if os.path.exists(file_path):
+			import_file("Module Profile", file_path, "Insert", False, True)
+	except Exception as e:
+		frappe.logger().warning(f"Error importing Module Profile.csv: {str(e)}")
 
-	file_path = os.path.join(file_dir, 'Role Profile.csv')
-	import_file("Role Profile", file_path, "Insert", False, True)
+	try:
+		file_path = os.path.join(file_dir, 'Role Profile.csv')
+		if os.path.exists(file_path):
+			import_file("Role Profile", file_path, "Insert", False, True)
+	except Exception as e:
+		frappe.logger().warning(f"Error importing Role Profile.csv: {str(e)}")
 	 
-	file_path = os.path.join(file_dir, 'Salary Component.csv')
-	import_file("Salary Component", file_path, "Insert", False, True)
-	import_social_insurance()
+	try:
+		file_path = os.path.join(file_dir, 'Salary Component.csv')
+		if os.path.exists(file_path):
+			import_file("Salary Component", file_path, "Insert", False, True)
+	except Exception as e:
+		frappe.logger().warning(f"Error importing Salary Component.csv: {str(e)}")
+	
+	try:
+		import_social_insurance()
+	except Exception as e:
+		frappe.logger().warning(f"Error importing social insurance: {str(e)}")
 	 
 def create_project_template():
 	if frappe.db.exists("Project Template", "Smart Practices"):
@@ -134,44 +156,47 @@ def create_project_template():
 	frappe.db.commit()
 
 def import_social_insurance():
-	# Get account with account_name "Salary"
-	salary_account = frappe.get_doc("Account", {"account_name": "Salary"})
-	# If account does not exist, return
-	if not salary_account:
-		return
-	
-	# Get salary component with component_name "Basic"
-	salary_component = frappe.get_doc("Salary Component", "Basic")
-	salary_component.is_tax_applicable = 0
-	salary_component.depends_on_payment_days = 0
-	salary_component.amount_based_on_formula = 1
-	salary_component.formula = "base * 1"
-	salary_component.save(ignore_permissions=True)
+	try:
+		# Get account with account_name "Salary"
+		salary_account = frappe.get_doc("Account", {"account_name": "Salary"})
+		# If account does not exist, return
+		if not salary_account:
+			return
+		
+		# Get salary component with component_name "Basic"
+		salary_component = frappe.get_doc("Salary Component", "Basic")
+		salary_component.is_tax_applicable = 0
+		salary_component.depends_on_payment_days = 0
+		salary_component.amount_based_on_formula = 1
+		salary_component.formula = "base * 1"
+		salary_component.save(ignore_permissions=True)
 
-	# Loop through all existing salary components and update the account to "Salary"
-	salary_components = frappe.get_all("Salary Component", filters={"account": ""}, fields=["name","amount_based_on_formula","formula"])
-	for salary_component in salary_components:
-		salary_component_doc = frappe.get_doc("Salary Component", salary_component.name)
-		salary_component_doc.append("accounts", {"account": salary_account.name})
-		salary_component_doc.save(ignore_permissions=True)
+		# Loop through all existing salary components and update the account to "Salary"
+		salary_components = frappe.get_all("Salary Component", filters={"account": ""}, fields=["name","amount_based_on_formula","formula"])
+		for salary_component in salary_components:
+			salary_component_doc = frappe.get_doc("Salary Component", salary_component.name)
+			salary_component_doc.append("accounts", {"account": salary_account.name})
+			salary_component_doc.save(ignore_permissions=True)
 
-	frappe.db.commit()
+		frappe.db.commit()
 
-	# Create a new salary structure "Smart Practices" and add all salary components to it
-	salary_structure = frappe.get_doc({
-		"doctype": "Salary Structure",
-		"name": "Smart Practices",
-		"is_active": "Yes",
-	})
-	for salary_component in salary_components:
-		salary_structure.append("earnings", {
-			"salary_component": salary_component.name,
-			"amount_based_on_formula": salary_component.amount_based_on_formula,
-			"formula": salary_component.formula,
-			})
-	
-	salary_structure.insert(ignore_permissions=True)
-	salary_structure.submit()
+		# Create a new salary structure "Smart Practices" and add all salary components to it
+		salary_structure = frappe.get_doc({
+			"doctype": "Salary Structure",
+			"name": "Smart Practices",
+			"is_active": "Yes",
+		})
+		for salary_component in salary_components:
+			salary_structure.append("earnings", {
+				"salary_component": salary_component.name,
+				"amount_based_on_formula": salary_component.amount_based_on_formula,
+				"formula": salary_component.formula,
+				})
+		
+		salary_structure.insert(ignore_permissions=True)
+		salary_structure.submit()
+	except Exception as e:
+		frappe.logger().warning(f"Error in import_social_insurance: {str(e)}")
 	
 def update_stock_settings():
 	stock_settings = frappe.get_single("Stock Settings")

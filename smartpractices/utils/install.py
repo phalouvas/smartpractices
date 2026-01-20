@@ -51,30 +51,54 @@ def fix_permissions():
 	add_permission("Role", "Project Manager", "Project Template")
 	
 def import_app_data():
-	item_group = frappe.get_doc({
-		"doctype": "Item Group",
-		"item_group_name": "Smart Practices",
-		"parent_item_group": "All Item Groups",
-		"is_group": 1
-	})
-	
-	item_group.insert(ignore_permissions=True)
-	frappe.db.commit()
+	try:
+		# Check if Item Group doctype exists (requires ERPNext to be installed)
+		if not frappe.get_meta("Item Group", cached=False):
+			frappe.logger().warning("Item Group doctype not found. Skipping smartpractices app data import.")
+			return
+			
+		item_group = frappe.get_doc({
+			"doctype": "Item Group",
+			"item_group_name": "Smart Practices",
+			"parent_item_group": "All Item Groups",
+			"is_group": 1
+		})
+		
+		item_group.insert(ignore_permissions=True)
+		frappe.db.commit()
+	except Exception as e:
+		frappe.logger().warning(f"Error importing smartpractices app data: {str(e)}")
 
 	# Get the directory path of the current file
 	file_dir = os.path.dirname(os.path.abspath(__file__))
 
-	file_path = os.path.join(file_dir, 'Item Group.csv')
-	import_file("Item Group", file_path, "Insert", False, True)
+	try:
+		file_path = os.path.join(file_dir, 'Item Group.csv')
+		if os.path.exists(file_path):
+			import_file("Item Group", file_path, "Insert", False, True)
+	except Exception as e:
+		frappe.logger().warning(f"Error importing Item Group.csv: {str(e)}")
 
-	file_path = os.path.join(file_dir, 'Item.csv')
-	import_file("Item", file_path, "Insert", False, True)
+	try:
+		file_path = os.path.join(file_dir, 'Item.csv')
+		if os.path.exists(file_path):
+			import_file("Item", file_path, "Insert", False, True)
+	except Exception as e:
+		frappe.logger().warning(f"Error importing Item.csv: {str(e)}")
 
-	file_path = os.path.join(file_dir, 'Task Type.csv')
-	import_file("Task Type", file_path, "Insert", False, True)
+	try:
+		file_path = os.path.join(file_dir, 'Task Type.csv')
+		if os.path.exists(file_path):
+			import_file("Task Type", file_path, "Insert", False, True)
+	except Exception as e:
+		frappe.logger().warning(f"Error importing Task Type.csv: {str(e)}")
 
-	file_path = os.path.join(file_dir, 'Task.csv')
-	import_file("Task", file_path, "Insert", False, True)
+	try:
+		file_path = os.path.join(file_dir, 'Task.csv')
+		if os.path.exists(file_path):
+			import_file("Task", file_path, "Insert", False, True)
+	except Exception as e:
+		frappe.logger().warning(f"Error importing Task.csv: {str(e)}")
 
 	file_path = os.path.join(file_dir, 'Module Profile.csv')
 	import_file("Module Profile", file_path, "Insert", False, True)
